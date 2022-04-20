@@ -6,22 +6,22 @@ const sneakers = [
   },
   {
     name: '650R',
-    title: 'New Balance',
+    brand: 'New Balance',
     price: 165,
   },
   {
     name: 'Velosamba',
-    title: 'Adidas',
+    brand: 'Adidas',
     price: 120,
   },
   {
     name: 'UltraRange EXO',
-    title: 'Vans',
+    brand: 'Vans',
     price: 95,
   },
   {
     name: 'Instapump Fury 95',
-    title: 'Reebok',
+    brand: 'Reebok',
     price: 180,
   },
 ];

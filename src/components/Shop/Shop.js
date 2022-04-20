@@ -1,15 +1,15 @@
 import Header from '../../Header';
-import SKUs from './SKUs';
+import SKUcards from './SKUcards';
 
-function Shop() {
+const Shop = (props) => {
   return (
     <div className="Shop">
       <Header />
       <div className="sku-list">
-        <SKUs />
+        <SKUcards handleClick={props.handleClick} />
       </div>
     </div>
   );
-}
+};
 
 export default Shop;
