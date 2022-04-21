@@ -30,11 +30,14 @@ const SKUcards = (props) => {
             <div className="card-title" data-model={sneaker.name}>
               <div className="card-brand">{sneaker.brand}</div>
               <div className="card-name">{sneaker.name}</div>
+              <div className="card-price">${sneaker.price}</div>
             </div>
             <div className="card-add-button">
               <input
                 className="increment-field"
                 type="number"
+                min="1"
+                max="100"
                 data-sneaker={sneaker.name}
                 onChange={updateCount}
                 defaultValue="1"
@@ -45,6 +48,7 @@ const SKUcards = (props) => {
                 data-count="1"
                 data-sneaker={sneaker.name}
                 data-price={sneaker.price}
+                data-brand={sneaker.brand}
               >
                 Add to cart
               </button>

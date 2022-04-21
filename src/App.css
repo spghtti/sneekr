@@ -81,8 +81,8 @@
   height: auto;
   background-color: white;
   border-radius: 5px;
-  padding: 0 0 40px 0;
-  box-shadow: 2px 15px 15px #888888;
+  padding: 0 0 30px 0;
+  box-shadow: 1px 10px 15px 0px #888888;
   cursor: pointer;
   transition: 50ms ease-in;
 }
@@ -97,7 +97,7 @@
 .card-title {
   display: flex;
   font-weight: 700;
-  align-items: end;
+  align-items: flex-end;
   justify-content: left;
   padding: 0 0 10px 20px;
   height: 20%;
@@ -108,6 +108,11 @@
   font-size: 16px;
   bottom: 0;
   margin-right: 5px;
+}
+
+.card-price {
+  margin-left: auto;
+  margin-right: 20px;
 }
 .sku-list {
   display: flex;
@@ -122,8 +127,8 @@
   flex-direction: row;
   flex: 2;
   flex-wrap: wrap;
-  padding: 100px 40px 20px 40px;
-  gap: 60px;
+  padding: 100px 40px 20px 75px;
+  gap: 40px;
 }
 
 img {
@@ -135,6 +140,7 @@ img {
 .card-info {
   display: flex;
   flex-direction: column;
+  height: 100px;
 }
 
 .card-add-button {
@@ -144,5 +150,33 @@ img {
 
 .increment-field {
   width: 40px;
-  margin-right: 20px;
+  margin-right: 10px;
+}
+.cart-area {
+  display: flex;
+  width: 80vw;
+  margin: 100px 50px 0 50px;
+  flex-direction: column;
+}
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+}
+.cart-item-info {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+}
+.cart-item-image {
+  width: 25%;
+  height: 25%;
+}
+.cart-item-price {
+  margin-left: auto;
+}
+.cart-total {
+  margin-left: auto;
 }
