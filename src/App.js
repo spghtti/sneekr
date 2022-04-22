@@ -5,7 +5,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Hello from app</h1>
+      <div className="main-headline-container">
+        <div className="main-headline">
+          <h1>get the latest drop of kicks.</h1>
+        </div>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import App from './App';
 import Shop from './components/Shop/Shop';
 import About from './components/About';
 import CartPage from './components/CartPage';
+import ItemPage from './components/Shop/ItemPage';
 import React, { useState, useEffect } from 'react';
 
 const RouteSwitch = () => {
@@ -78,6 +79,7 @@ const RouteSwitch = () => {
             />
           }
         ></Route>
+        <Route path="/shop/:id" element={<ItemPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,5 +1,6 @@
 import sneakers from './sneakers';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // const importAll = (r) => {
 //   let images = {};
@@ -24,12 +25,16 @@ const SKUcards = (props) => {
       {sneakers.map((sneaker, index) => (
         <div data-model={sneaker.name} key={index} className="card">
           <div className="card-image" data-model={sneaker.name}>
-            <img src={require('../images/placeholder.jpeg')} alt="" />
+            <Link to={`/shop/${sneaker.name.toLowerCase()}`}>
+              <img src={require('../images/placeholder.jpeg')} alt="" />
+            </Link>
           </div>
           <div className="card-info">
             <div className="card-title" data-model={sneaker.name}>
-              <div className="card-brand">{sneaker.brand}</div>
-              <div className="card-name">{sneaker.name}</div>
+              <Link to={`/shop/${sneaker.name.toLowerCase()}`}>
+                <div className="card-brand">{sneaker.brand.toLowerCase()}</div>
+                <div className="card-name">{sneaker.name.toLowerCase()}</div>
+              </Link>
               <div className="card-price">${sneaker.price}</div>
             </div>
             <div className="card-add-button">

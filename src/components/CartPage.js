@@ -26,7 +26,7 @@ const CartPage = (props) => {
             </div>
           </div>
         ))}
-        <div className="cart-total">Total: {props.total}</div>
+        <div className="cart-total">Total: ${props.total}</div>
       </div>
     </div>
   );
