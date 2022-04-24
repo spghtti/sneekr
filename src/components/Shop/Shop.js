@@ -7,6 +7,7 @@ const Shop = (props) => {
       <Header />
       <div className="sku-list">
         <SKUcards handleClick={props.handleClick} />
+        <div className="sku-area-background"></div>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import sneakers from './sneakers';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const ItemPage = () => {
+const ItemPage = (props) => {
   const { id } = useParams();
 
   const getItemDetails = (id) => {
@@ -12,6 +12,11 @@ const ItemPage = () => {
         return sneakers[i];
       }
     }
+  };
+
+  const updateCount = (e) => {
+    const button = document.getElementById(`${e.target.dataset.sneaker}`);
+    button.dataset.count = e.target.valueAsNumber;
   };
 
   return (
@@ -30,6 +35,27 @@ const ItemPage = () => {
             </div>
             <div className="item-description">
               {getItemDetails(id).description}
+            </div>
+            <div className="item-add-button">
+              <input
+                className="increment-field"
+                type="number"
+                min="1"
+                max="100"
+                data-sneaker={getItemDetails(id).name}
+                onChange={updateCount}
+                defaultValue="1"
+              ></input>
+              <button
+                onClick={props.handleClick}
+                id={getItemDetails(id).name}
+                data-count="1"
+                data-sneaker={getItemDetails(id).name}
+                data-price={getItemDetails(id).price}
+                data-brand={getItemDetails(id).brand}
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         </div>

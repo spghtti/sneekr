@@ -10,7 +10,7 @@ const Header = () => {
           <ul className="tabParent">
             <div className="tab site-logo">
               <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-                <h1>sneekr</h1>
+                <h1 className="siteLogo">sneekr</h1>
               </Link>
             </div>
             <div className="tab">

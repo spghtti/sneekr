@@ -1,18 +1,17 @@
 import sneakers from './sneakers';
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// const importAll = (r) => {
-//   let images = {};
-//   r.keys().map((item, index) => {
-//     images[item.replace('./', '')] = r(item);
-//   });
-//   return images;
-// };
+const importAll = (r) => {
+  let images = {};
+  r.keys().map((item, index) => {
+    images[item.replace('./', '')] = r(item);
+  });
+  return images;
+};
 
-// const images = importAll(
-//   require.context('../images', false, /\.(png|jpe?g|svg)$/)
-// );
+const images = importAll(
+  require.context('../images', false, /\.(png|jpe?g|svg)$/)
+);
 
 const updateCount = (e) => {
   const button = document.getElementById(`${e.target.dataset.sneaker}`);
@@ -26,12 +25,15 @@ const SKUcards = (props) => {
         <div data-model={sneaker.name} key={index} className="card">
           <div className="card-image" data-model={sneaker.name}>
             <Link to={`/shop/${sneaker.name.toLowerCase()}`}>
-              <img src={require('../images/placeholder.jpeg')} alt="" />
+              <img src={images[`${sneakers[index].name}.jpeg`]} alt="" />
             </Link>
           </div>
           <div className="card-info">
             <div className="card-title" data-model={sneaker.name}>
-              <Link to={`/shop/${sneaker.name.toLowerCase()}`}>
+              <Link
+                to={`/shop/${sneaker.name.toLowerCase()}`}
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
                 <div className="card-brand">{sneaker.brand.toLowerCase()}</div>
                 <div className="card-name">{sneaker.name.toLowerCase()}</div>
               </Link>

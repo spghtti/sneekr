@@ -1,13 +1,19 @@
 .App {
   text-align: center;
   overflow-y: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
 .site-logo {
   font-size: calc(13px + 2vmin);
   display: flex;
@@ -15,6 +21,7 @@
   align-items: center;
   justify-content: center;
   width: 20%;
+  font-family: 'Rubik Mono One', sans-serif;
 }
 
 .App-link {
@@ -27,11 +34,12 @@
 }
 
 .tabParent {
-  width: auto;
+  width: 95vw;
   display: flex;
   flex-direction: row;
   height: 50px;
   padding: 10px 5px;
+  font-weight: 500;
 }
 
 .tab {
@@ -72,22 +80,31 @@
 .card {
   color: rgb(46, 39, 39);
   font-size: 20px;
-  width: 300px;
-  height: auto;
+  width: 325px;
+  height: 350px;
   background-color: white;
   border-radius: 5px;
-  padding: 0 0 30px 0;
   box-shadow: 1px 10px 15px 0px #888888;
-  transition: 50ms ease-in;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .card-image {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90%;
+  height: 250px;
   width: 100%;
   cursor: pointer;
+}
+
+.card-image > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  object-fit: cover;
 }
 .card-title {
   display: flex;
@@ -110,6 +127,20 @@
 }
 .card-add-button > button {
   cursor: pointer;
+  border: 1px solid gray;
+  background-color: rgb(233, 233, 233);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  width: 90px;
+  height: auto;
+  cursor: pointer;
+  padding: 5px 0 5px 0;
+  transition: 0.2s;
+}
+
+.card-add-button > button:hover {
+  background-color: rgb(235, 35, 35);
+  color: white;
 }
 .card-price {
   margin-left: auto;
@@ -122,16 +153,15 @@
 }
 .sku-area {
   min-height: 90vh;
-  width: 100%;
+  width: 100vw;
+  height: auto;
   justify-content: left;
   display: flex;
   flex-direction: row;
-  flex: 2;
   flex-wrap: wrap;
-  padding: 100px 40px 20px 75px;
-  gap: 40px;
+  margin: 75px 10% 100px 10%;
+  gap: 20px;
 }
-
 img {
   width: 80%;
   height: 80%;
@@ -183,18 +213,52 @@ img {
 }
 .main-headline-container {
   display: flex;
+  flex-direction: column;
+  width: 100vw;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
   height: 90vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 .main-headline {
+  color: white;
   display: flex;
+  overflow-y: hidden;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
-  height: 90vh;
+  height: 100px;
+  width: 100vw;
   font-size: calc(12px + 4vmin);
+  font-weight: 700;
+}
+#bg-video {
+  position: absolute;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  z-index: -100;
+}
+.Shop {
+  height: 100vh;
+}
+.home-shop-now-button {
+  border: none;
+  background-color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: calc(10px + 1vmin);
+  width: 175px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.home-shop-now-button:hover {
+  background-color: rgb(235, 35, 35);
+  color: white;
 }
 .item-container {
   display: flex;

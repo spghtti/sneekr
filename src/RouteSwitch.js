@@ -41,6 +41,7 @@ const RouteSwitch = () => {
 
     if (isExistingItem(e.target.dataset.sneaker, arr)) {
       const index = getItemIndex(e.target.dataset.sneaker, arr);
+      console.log(arr[index].count);
       arr[index].count =
         Number(e.target.dataset.count) + Number(arr[index].count);
       arr[index].price =
@@ -48,18 +49,17 @@ const RouteSwitch = () => {
     } else {
       arr.push({
         name: e.target.dataset.sneaker,
-        price: e.target.dataset.price,
+        price: Number(e.target.dataset.price) * Number(e.target.dataset.count),
         brand: e.target.dataset.brand,
         count: e.target.dataset.count,
       });
       setCart(arr);
-      console.log(total);
     }
+    console.log(arr);
   };
 
   const handleClick = (e) => {
     addToCart(e);
-    console.log(cart);
   };
 
   return (
@@ -79,7 +79,10 @@ const RouteSwitch = () => {
             />
           }
         ></Route>
-        <Route path="/shop/:id" element={<ItemPage />} />
+        <Route
+          path="/shop/:id"
+          element={<ItemPage handleClick={handleClick} />}
+        />
       </Routes>
     </BrowserRouter>
   );
