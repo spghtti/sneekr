@@ -64,19 +64,27 @@ body {
   align-items: center;
   text-decoration: none;
 }
-
 .tab-link:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-
 .cart-tab {
   width: 100%;
   display: flex;
   justify-content: right;
   align-items: center;
 }
-
+.cart-item-brand,
+.cart-item-sneaker {
+  margin-right: 5px;
+}
+.cart-item-count {
+  font-weight: 500;
+}
+.cart-background {
+  box-shadow: 1px 10px 15px 0px #888888;
+  border-radius: 5px;
+}
 .card {
   color: rgb(46, 39, 39);
   font-size: 20px;
@@ -84,10 +92,18 @@ body {
   height: 350px;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 1px 10px 15px 0px #888888;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
-
+.card-background {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  background-color: rgb(235, 35, 35);
+  width: 325px;
+  height: 360px;
+  border-radius: 5px;
+  box-shadow: 1px 10px 15px 0px #888888;
+}
 .card-image {
   display: flex;
   align-items: center;
@@ -127,8 +143,9 @@ body {
 }
 .card-add-button > button {
   cursor: pointer;
-  border: 1px solid gray;
-  background-color: rgb(233, 233, 233);
+  /* border: 1px solid gray; */
+  border-style: solid;
+  background-color: rgb(204, 201, 201);
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 500;
   width: 90px;
@@ -148,6 +165,7 @@ body {
 }
 .sku-list {
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 100vw;
 }
@@ -155,11 +173,11 @@ body {
   min-height: 90vh;
   width: 100vw;
   height: auto;
-  justify-content: left;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 75px 10% 100px 10%;
+  margin: 75px 10vw 100px 10vw;
   gap: 20px;
 }
 img {
@@ -173,43 +191,70 @@ img {
   flex-direction: column;
   height: 100px;
 }
-
 .card-add-button {
   margin-left: auto;
   margin-right: 20px;
 }
-
 .increment-field {
   width: 40px;
   margin-right: 10px;
 }
+.cart-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  border-radius: 5px;
+}
 .cart-area {
   display: flex;
+  justify-content: center;
   width: 80vw;
-  margin: 100px 50px 0 50px;
   flex-direction: column;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 5px;
 }
 .cart-item {
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-grow: 1;
+  font-size: calc(10px + 1vmin);
+  font-weight: 700;
   width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .cart-item-info {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   width: 100%;
+  border-radius: 5px;
 }
 .cart-item-image {
   width: 25%;
   height: 25%;
+  border-radius: 5px;
 }
 .cart-item-price {
   margin-left: auto;
+  padding-right: 10px;
+}
+.cart-total-container {
+  display: flex;
+  background-color: rgb(235, 35, 35);
+  height: 40px;
+  align-items: center;
+  padding-right: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .cart-total {
   margin-left: auto;
+  color: white;
+  font-weight: 900;
 }
 .main-headline-container {
   display: flex;
@@ -260,20 +305,63 @@ img {
   background-color: rgb(235, 35, 35);
   color: white;
 }
+.item-page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+.item-info {
+  display: flex;
+  height: 100%;
+  margin: 50px 0 0 20px;
+  width: 500px;
+  flex-direction: column;
+}
 .item-container {
   display: flex;
-  width: 100vw;
+  width: 75vw;
+  flex-wrap: wrap;
 }
 .item-title {
   display: flex;
+  font-size: calc(11px + 2vmin);
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 .item-image > img {
-  height: 300px;
-  width: 300px;
+  height: 600px;
+  width: 600px;
+  object-fit: cover;
 }
 .item-brand {
   margin-right: 5px;
 }
 .item-price {
+  margin-left: auto;
+}
+.item-description {
+  margin-bottom: 40px;
+}
+.item-add-button {
+  display: flex;
+  width: 100%;
+}
+.item-add-button > button {
+  cursor: pointer;
+  border-style: solid;
+  background-color: rgb(193, 193, 193);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  height: auto;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.2s;
+}
+.item-add-button > button:hover {
+  background-color: rgb(235, 35, 35);
+  color: white;
+}
+.item-add-button > input {
   margin-left: auto;
 }
