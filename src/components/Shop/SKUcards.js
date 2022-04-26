@@ -35,7 +35,7 @@ const SKUcards = (props) => {
   return (
     <div className="sku-area">
       {sneakers.map((sneaker, index) => (
-        <div className="card-background" key={index}>
+        <div className="card-background fade-in" key={index}>
           <div data-model={sneaker.name} className="card">
             <div className="card-image" data-model={sneaker.name}>
               <Link to={`/shop/${sneaker.name.toLowerCase()}`}>

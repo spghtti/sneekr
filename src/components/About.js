@@ -6,14 +6,16 @@ function About() {
       <Header />
       <div className="about-info">
         <div className="about-headline-container">
-          <h1 className="about-headline">
+          <h1 className="about-headline fade-in">
             timeless sneakers. available for a limited time.
           </h1>
         </div>
         <div className="about-info-content">
           <div className="about-paragraph-right">
             <div className="about-paragraph-info">
-              <h1>drops delivered to your home.</h1>
+              <h2 className="about-paragraph-headline">
+                drops delivered to your home.
+              </h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac
@@ -33,12 +35,14 @@ function About() {
           <div className="about-paragraph-left">
             <div className="about-image-left">
               <img
-                src={require('./images/about-background.jpg')}
-                alt="Collection of sneakers"
+                src={require('./images/packages.jpg')}
+                alt="Truck filled with packages"
               ></img>
             </div>
             <div className="about-paragraph-info">
-              <h1>a new drop every month.</h1>
+              <h2 className="about-paragraph-headline">
+                a new drop every month.
+              </h2>
               <p>
                 Gravida arcu ac tortor dignissim convallis. Mi sit amet mauris
                 commodo quis imperdiet massa. Cursus turpis massa tincidunt dui
@@ -52,7 +56,9 @@ function About() {
           </div>
           <div className="about-paragraph-right">
             <div className="about-paragraph-info">
-              <h1>totally carbon-neutral.</h1>
+              <h2 className="about-paragraph-headline">
+                totally carbon-neutral.
+              </h2>
               <p>
                 Feugiat sed lectus vestibulum mattis ullamcorper velit. Diam sit
                 amet nisl suscipit adipiscing. Quis enim lobortis scelerisque
@@ -65,10 +71,7 @@ function About() {
               </p>
             </div>
             <div className="about-image-right">
-              <img
-                src={require('./images/about-background.jpg')}
-                alt="Collection of sneakers"
-              ></img>
+              <img src={require('./images/trees.jpg')} alt="Forest"></img>
             </div>
           </div>
         </div>

@@ -451,13 +451,14 @@ img {
   width: 100vw;
   font-size: calc(12px + 4vmin);
   font-weight: 700;
+  padding: 20px;
 }
 .about-info-content {
   display: flex;
-  width: 100vw;
+  flex-wrap: wrap;
   height: auto;
   flex-direction: column;
-  /* padding: 20px 100px 0 20px; */
+  margin-bottom: 100px;
 }
 .about-image-right,
 .about-image-left {
@@ -468,12 +469,71 @@ img {
   height: 100%;
   width: 100%;
 }
-.about-image > img {
-  margin-right: 40px;
-}
 .about-paragraph-left,
 .about-paragraph-right {
   display: flex;
+  height: 400px;
   align-items: center;
   justify-content: center;
+  margin: 10% 10% 0 10%;
+}
+.about-paragraph-headline {
+  font-size: calc(11px + 2vmin);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.about-paragraph-info {
+  width: 50%;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s;
+  -webkit-animation: fadeIn 1.5s;
+  -moz-animation: fadeIn 1.5s;
+  -o-animation: fadeIn 1.5s;
+  -ms-animation: fadeIn 1.5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
