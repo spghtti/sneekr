@@ -2,6 +2,7 @@ import Header from '../../Header';
 import sneakers from './sneakers';
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Modal from '../Modal';
 
 const ItemPage = (props) => {
   const { id } = useParams();
@@ -9,15 +10,26 @@ const ItemPage = (props) => {
   const getItemDetails = (id) => {
     for (let i = 0; i < sneakers.length; i++) {
       if (sneakers[i].name === id) {
-        console.log(sneakers[i].name);
         return sneakers[i];
       }
     }
   };
 
+  function isInt(value) {
+    if (isNaN(value)) {
+      return false;
+    }
+    const x = parseFloat(value);
+    return (x | 0) === x;
+  }
+
   const updateCount = (e) => {
     const button = document.getElementById(`${e.target.dataset.sneaker}`);
-    button.dataset.count = e.target.valueAsNumber;
+    if (isInt(e.target.valueAsNumber)) {
+      button.dataset.count = e.target.valueAsNumber;
+    } else {
+      button.dataset.count = 1;
+    }
   };
 
   const importAll = (r) => {
@@ -76,6 +88,7 @@ const ItemPage = (props) => {
           </div>
         </div>
       </div>
+      {props.isModalActive ? <Modal /> : null}
     </div>
   );
 };

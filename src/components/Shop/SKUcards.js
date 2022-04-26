@@ -1,5 +1,6 @@
 import sneakers from './sneakers';
 import { Link } from 'react-router-dom';
+import Popup from 'reactjs-popup';
 
 const importAll = (r) => {
   let images = {};
@@ -13,17 +14,29 @@ const images = importAll(
   require.context('../images', false, /\.(png|jpe?g|svg)$/)
 );
 
+function isInt(value) {
+  if (isNaN(value)) {
+    return false;
+  }
+  const x = parseFloat(value);
+  return (x | 0) === x;
+}
+
 const updateCount = (e) => {
   const button = document.getElementById(`${e.target.dataset.sneaker}`);
-  button.dataset.count = e.target.valueAsNumber;
+  if (isInt(e.target.valueAsNumber)) {
+    button.dataset.count = e.target.valueAsNumber;
+  } else {
+    button.dataset.count = 1;
+  }
 };
 
 const SKUcards = (props) => {
   return (
     <div className="sku-area">
       {sneakers.map((sneaker, index) => (
-        <div className="card-background">
-          <div data-model={sneaker.name} key={index} className="card">
+        <div className="card-background" key={index}>
+          <div data-model={sneaker.name} className="card">
             <div className="card-image" data-model={sneaker.name}>
               <Link to={`/shop/${sneaker.name.toLowerCase()}`}>
                 <img src={images[`${sneakers[index].name}.jpeg`]} alt="" />

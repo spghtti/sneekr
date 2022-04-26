@@ -1,5 +1,6 @@
 import Header from '../../Header';
 import SKUcards from './SKUcards';
+import Modal from '../Modal';
 
 const Shop = (props) => {
   return (
@@ -8,6 +9,7 @@ const Shop = (props) => {
       <div className="sku-list">
         <SKUcards handleClick={props.handleClick} />
       </div>
+      {props.isModalActive ? <Modal /> : null}
     </div>
   );
 };

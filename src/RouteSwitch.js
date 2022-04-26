@@ -9,6 +9,7 @@ import React, { useState, useEffect } from 'react';
 const RouteSwitch = () => {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState();
+  const [isModalActive, setShowModal] = useState(false);
 
   useEffect(() => {
     let newTotal = 0;
@@ -17,6 +18,14 @@ const RouteSwitch = () => {
     }
     setTotal(newTotal);
   }, [cart]);
+
+  const showModal = () => {
+    setShowModal(true);
+  };
+
+  const hideModal = () => {
+    setShowModal(false);
+  };
 
   const isExistingItem = (name, cart) => {
     for (let i = 0; i < cart.length; i++) {
@@ -41,7 +50,6 @@ const RouteSwitch = () => {
 
     if (isExistingItem(e.target.dataset.sneaker, arr)) {
       const index = getItemIndex(e.target.dataset.sneaker, arr);
-      console.log(arr[index].count);
       arr[index].count =
         Number(e.target.dataset.count) + Number(arr[index].count);
       arr[index].price =
@@ -55,18 +63,30 @@ const RouteSwitch = () => {
       });
       setCart(arr);
     }
-    console.log(arr);
   };
 
   const handleClick = (e) => {
+    showModal();
     addToCart(e);
+    setTimeout(() => {
+      hideModal();
+    }, '1000');
   };
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/shop" element={<Shop handleClick={handleClick} />} />
+        <Route
+          path="/shop"
+          element={
+            <Shop
+              handleClick={handleClick}
+              showModal={showModal}
+              isModalActive={isModalActive}
+            />
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route
           path="/cart"
@@ -81,7 +101,13 @@ const RouteSwitch = () => {
         ></Route>
         <Route
           path="/shop/:id"
-          element={<ItemPage handleClick={handleClick} />}
+          element={
+            <ItemPage
+              handleClick={handleClick}
+              showModal={showModal}
+              isModalActive={isModalActive}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
