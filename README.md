@@ -2,7 +2,7 @@
 
 ## About this project
 
-A modern, front-end sneaker shopping app.
+A modern, front-end e-commerce app.
 
 This is a solution to the Odin's Project's [assignment](https://www.theodinproject.com/lessons/node-path-javascript-shopping-cart) to create a functional shopping cart utilizing browser routing. This site goes a step further and includes product pages, as well as an About page. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
